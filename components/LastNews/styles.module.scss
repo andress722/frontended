@@ -1,0 +1,20 @@
+
+.sliderProps{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 350px;
+        
+.sliderProps:not(:first-child) {
+        border-left: solid black 1px;
+    }
+    img{
+        width: 400px;
+        height: 200px;
+      
+       
+    }
+}
+.border{
+    border: solid black 0 2px !important;
+}

@@ -1,0 +1,27 @@
+import Link from 'next/link';
+
+const ArticleCard = ({ article }) => {
+	const date = new Date(article.date).toDateString();
+
+	console.log(article);
+	return (
+		<div className="article">
+			<div className="cover-image">
+				<img src={`http://localhost:1337${article.attributes}`} />
+			</div>
+			<div className="article-info">
+				<Link href={`/article/${article.slug}`}>
+					<h2>{article.title}</h2>
+				</Link>
+				<div className="article-brief">{article.content}</div>
+				<p className="author-info">
+					<Link href={`/author/${article.author.data.attributes.username}`}>
+						{article.author.data.attributes.name}
+					</Link>{' '}
+					on {date}
+				</p>
+			</div>
+		</div>
+	);
+};
+export default ArticleCard;
